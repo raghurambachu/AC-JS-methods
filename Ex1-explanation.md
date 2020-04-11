@@ -42,8 +42,48 @@ The function that accepts a function reference as a parameter or return it is ca
 For Example:
 
 ```js
-function repeatIt(addFn) {
-  console.log(addFn(23, 20));
+// forEach is a higher order function that accepts a function reference (console.log)
+["red", "green", "blue", "red"].forEach(console.log);
+
+//
+function outer() {
+  function inner() {
+    return 21;
+  }
+  return inner;
 }
-outer;
+let innerFn = outer(); // returning a function from function
+```
+
+A function that repeats n times.
+
+```js
+function repeatNTimes(n){
+  for(let i = 0; i < n; i++>){
+    console.log(i);
+  }
+}
+repeatNTimes(10); // console will print from 1-9
+
+// If you want to alert those values you will have change the function like this
+function repeatNTimes(n){
+  for(let i = 0; i < n; i++>){
+    alert(i);
+  }
+}
+repeatNTimes(2);
+
+
+```
+
+To make this less repeatable let's change the function `repeatNTimes` in such a way that it accepts `n` (number of times) and a function reference (action)
+
+```js
+function repeatNTimes(n, action) {
+  for (let i = 0; i < n; i++) {
+    action(i);
+  }
+}
+repeatNTimes(10, console.log);
+repeatNTimes(3, alert);
 ```

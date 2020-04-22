@@ -32,16 +32,166 @@ Example:
    - `charAt` accepts a index (number data type) and return the character on that index.
 
 2. `toUpperCase`
+
+   - This method accepts no parameter.
+   - It returns the calling string value converted to uppercase.
+   ```js
+    let name = "Arya Stark";
+    name.toUpperCase(); //"ARYA STARK"
+    let sentance = "A quick brown fox jumped over a lazy dog";
+    sentance().toUpperCase(); //"A QUICK BROWN FOX JUMPED OVER A LAZY DOG"
+    let surname = "starks";
+    surname.toUpperCase(); //"STARKS"
+   ```
+   - `toUpperCase` returns a calling string value converted to uppercase.
+
 3. `toLowerCase`
+
+   - This method accepts no parameter.
+   - It returns the calling string value converted to lowercase.
+   ```js
+    let name = "Arya Stark";
+    name.toLowerCase(); //"arya stark"
+    let sentance = "A quick brown fox jumped over a lazy dog";
+    sentance().toLowerCase(); //"a quick brown fox jumped over a lazy dog"
+    let surname = "starks";
+    surname.toLowerCase(); //"STARKS"
+   ```
+   - `toLowerCase` returns a calling string value converted to lowercase.
+
 4. `trim`
+
+  - This method accepts no parameter.
+  - It returns a string stripped of whitespace from both ends.
+  ```js
+    let name = "  Arya Stark ";
+    name.trim(); //"Arya Stark"
+    let sentance = "  A quick brown fox      jumped over a lazy dog  ";
+    sentance.trim(); //"A quick brown fox       jumped over a lazy dog";
+    let surname = " starks  "
+    surname.trim(); //"starks"
+  ```
+  - trim() method returns the string stripped of whitespace from both ends. trim() does not affect the value of the str itself.
+
 5. `trimEnd`
+
+- This method accepts no parameter.
+- It returns a string stripped of whitespace from the end.
+```js
+  let name = "  Arya Stark  ";
+  name.trimEnd(); //" Arya Stark";
+  let sentance = "  A quick brown fox      jumped over a lazy dog  ";
+  sentance.trimEnd(); // "  A quick brown fox      jumped over a lazy dog";
+  let surname = " starks ";
+  surname.trimEnd(); //" starks"
+```
+- trimEnd() method returns a string string stripped of whitespace from right end. It does not affect the value of the string itself.
+
+
 6. `trimStart`
+
+- This method accepts no parameter.
+- It returns a string stripped of whitespace from the start.
+```js
+  let name = "  Arya Stark ";
+  name.trimStart(); // "Arya Stark "
+  let sentance = "  A quick brown fox      jumped over a lazy dog  ";
+  sentance.trimStart(); // "A quick brown fox      jumped over a lazy dog  "
+  let surname = " starks ";
+  surname.trimStart(); // "starks "
+
+```
+- trimStart() method returns a stirng stripped of whitespace from the left end. It does not affect the value of the string itself.
+
 7. `concat`
+
+- This method accepts 1 or more parameters that are to be concatenated.
+- It returns a new string containing the combined text of the strings provided.
+```js
+  let str1 = "Hello";
+  let str2 = "World";
+  str1.concat(str2); // "HelloWorld"
+  let str3 = " ";
+  str1.concat(str3, str2); // "Hello World"
+  let str4 = ", ";
+  str1.concat(str4, str2); // "Hello, World"
+```
+- concat() method returns a new string containing the combined text of the strings provided. It does not affect the original string to which it is applied.
+
 8. `endsWith`
+
+- This method accepts two parameters. One is searchString and other is length. The second parameter is optional. Though it sets the length of the string.
+- Based on whether a string ends with the characters of a specified string, it returns true or false.
+```js
+  let str = "Raghuram";
+  let searchString = "ram";
+  str.endsWith(searchString); // true
+  str.endsWith("ur",6); // true
+  let str2 = "Is it ends with question? Yes";
+  str2.endsWith("?"); //  false
+
+```
+- endsWith() method lets us determine whether or not a string ends with another string. This method is case sensitive.
+
 9. `includes`
+
+- This method accepts two parameters. One is searchString of "string" data type and other being position that is of "number" data type. Though position parameter is optional. It tells where to searchString from.
+- It returns true if search string is found anywhere within the string, otherwise false if not.
+
+```js
+  let str = "Power rangers SPD";
+  let searchString = "rangers";
+  str.includes(searchString) // true
+  str.includes(searchString,8) // false
+
+  str.includes("raghuram"); //false
+```
+- includes() lets us search for a string within a string and is case insensitive.
+
 10. `indexOf`
+
+- This method accepts two parameters. First parameter is searchElement which is of string type and the second is fromIndex which is of number type. fromIndex parameter is of number type and if specified searchElement is searched from that index onwards.
+- This method returns the first index of the element in the array, or -1 if not found.
+```js
+  const colors = ["red","yellow","white","blue","green"];
+  let searchElement = "yellow";
+  colors.indexOf(searchElement) // 1
+  colors.indexOf(searchElement,3) // -1
+
+  searchElement = "white";
+  colors.indexOf(searchElement) // 2
+```
+- indexOf() method returns the first index at which a given element can be found in the array or -1
+
 11. `lastIndexOf`
+
+- This method includes two parameters one is searchValue and other is fromIndex. searchValue is of string type and fromIndex is of number type. fromIndex is from where search is started. Though fromIndex is optional parameter
+- This method returns the position of last occurrence of the searchElement or returns -1 if the element is not found.
+```js
+  const colors = ["red","yellow","white","blue","green","yellow"];
+  let searchColor = "yellow";
+  colors.lastIndexOf(searchColor); // 5 and not 1
+  colors.lastIndexOf("white"); // 2
+  colors.lastIndexOf("maroon"); // -1
+```
+- lastIndexOf() returns the occurence of searchElement from the end and it is case sensitive.
+
 12. `padEnd`
+
+- This method accepts two parameters. One is the targetLength and another is padString. TargetLength is what that would be the final string length once padding is achieved and it is of number type. The second parameter ie padString is optional and it is the string that gets added to string until the target length is reached. By default the padding string is " " and if paddingString exceeds targetLength the part of padString is truncated from end.
+- This method returns the string with some padding either with spaces or paddingString added to the string.
+
+```js
+let str = `5`;
+str.padEnd(5,"0"); // "50000"
+
+str = "raghuram";
+str.padEnd(10,"."); // "raghuram.."
+
+str.padEnd(10); // "raghuram  "
+
+```
+
 13. `padStart`
 14. `repeat`
 15. `replace`

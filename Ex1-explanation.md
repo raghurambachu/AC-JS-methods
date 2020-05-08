@@ -6,7 +6,7 @@ When working with Primitive data types like (number, string) we would want to do
 "Hello".toUpperCase(); // "HELLO"
 ```
 
-In above example `"Hello"` is a string data type as soon as you applies `.` in-front of it the bag of methods for string data type is accessiable to you. `toUpperCase` is one of the method of string. When used it return a uppercase string `"HELLO"`
+In above example `"Hello"` is a string data type as soon as you apply `.` in-front of it the bag of methods for string data type is accessible to you. `toUpperCase` is one of the method of string. When used it return a uppercase string `"HELLO"`
 
 Similarly you can use other methods to do some other tasks. Like you have a sentance "A quick brown fox jumped over a lazy dog" and you want to convert them into individual words. You can use a string methods named `split`
 
@@ -19,7 +19,7 @@ let words = str.split(" ");
 
 Let's keep our terms clear:
 
-- Function Defination
+- Function Definition
 - Function Reference
 - Function Call
 
@@ -63,6 +63,8 @@ function repeatNTimes(n){
     console.log(i);
   }
 }
+//FEEDBACK : > than symbol at increment i++;
+
 repeatNTimes(10); // console will print from 1-9
 
 // If you want to alert those values you will have change the function like this

@@ -11,34 +11,87 @@
     <script>
       function countAllPeople() {
         // your code goes here
+        let countInFamily = got.houses.map(family => family.people.length);
+        let totalCount = countInFamily.reduce((sum,people)=> sum + people,0);
+        return totalCount
       }
 
       function peopleByHouses() {
         // your code goes here
+        let countInFamily = got.houses.map(family => ({[family.name]:family.people.length}));
+        return countInFamily;
       }
 
       function everyone() {
         // your code goes here
+        let peoplesArray = got.houses.map(family => family.people);
+        let namesOfPeople = peoplesArray.reduce((peoples,currPeople)=> {
+          peoples.push(...currPeople.map(person => person.name));
+          return peoples;
+        },[]);
+        return namesOfPeople;
+
       }
 
       function nameWithS() {
         // your code goes here
+        let peoplesArray = got.houses.map(family => family.people);
+        let namesOfPeople = peoplesArray.reduce((peoples,currPeople)=> {
+          peoples.push(...currPeople.map(person => person.name));
+          return peoples;
+        },[]);
+        namesOfPeopleWithS = namesOfPeople.filter(name => name.includes("s") || name.includes("S"));
+        return namesOfPeopleWithS;
       }
 
       function nameWithA() {
         // your code goes here
+        let peoplesArray = got.houses.map(family => family.people);
+        let namesOfPeople = peoplesArray.reduce((peoples,currPeople)=> {
+          peoples.push(...currPeople.map(person => person.name));
+          return peoples;
+        },[]);
+
+        let namesOfPeopleWithA = namesOfPeople.filter(name => name.includes("a") || name.includes("A"));
+        return namesOfPeopleWithA;
+       
       }
 
       function surnameWithS() {
         // your code goes here
+        let peoplesArray = got.houses.map(family => family.people);
+        let namesOfPeople = peoplesArray.reduce((peoples,currPeople)=> {
+          peoples.push(...currPeople.map(person => person.name));
+          return peoples;
+        },[]);
+
+        let firstnameSurnameSeparated = namesOfPeople.map(people => ({firstname: people.split(" ")[0], surname:people.split(" ")[1] }))
+        let surnamesObjWithS = firstnameSurnameSeparated.filter( person => person.surname[0] === "S");
+        let namesWithSurnamesS = surnamesObjWithS.map(person => `${person.firstname} ${person.surname}`);
+        return namesWithSurnamesS
       }
 
       function surnameWithA() {
         // your code goes here
+        let peoplesArray = got.houses.map(family => family.people);
+        let namesOfPeople = peoplesArray.reduce((peoples,currPeople)=> {
+          peoples.push(...currPeople.map(person => person.name));
+          return peoples;
+        },[]);
+
+        let firstnameSurnameSeparated = namesOfPeople.map(people => ({firstname: people.split(" ")[0], surname:people.split(" ")[1] }))
+        let surnamesObjWithA = firstnameSurnameSeparated.filter( person => person.surname[0] === "A");
+        let namesWithSurnamesA = surnamesObjWithA.map(person => `${person.firstname} ${person.surname}`);
+        return namesWithSurnamesA
       }
 
       function peopleNameOfAllHouses() {
         // your code goes here
+        let peopleInFamily = got.houses.map(family => ({[family.name]: family.people.reduce((peoples,person) => {
+          peoples.push(person.name);
+          return peoples;
+        },[])}));
+        return peopleInFamily;
       }
 
       // Testing your result after writing your function
